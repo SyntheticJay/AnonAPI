@@ -62,7 +62,7 @@ public class AnonAPI {
     public String upload(File file) {
        try {
            /* Creating response */
-           HttpResponse<JsonNode> response = Unirest.post("https://anonfile.com/api/upload").field("file", file).asJson();
+           HttpResponse<JsonNode> response = Unirest.post("https://api.anonfiles.com/upload").field("file", file).asJson();
            /* Instantiating body as a JSONObject */
            JSONObject object = response.getBody().getObject();
            /* Creating a new string combining the data, file, url, with the string short */
@@ -85,7 +85,7 @@ public class AnonAPI {
     public String get(String id) {
         try {
             /* Create response */
-            HttpResponse<JsonNode> response = Unirest.get("https://anonfile.com/api/v2/file/{id}/info".replace("{id}", id)).asJson();
+            HttpResponse<JsonNode> response = Unirest.get("https://api.anonfiles.com/v2/file/{id}/info".replace("{id}", id)).asJson();
             /* Instantiate a new variable with the body as the value. */
             String body = response.getBody().toString();
             /* Instantiate our parser */
@@ -109,7 +109,7 @@ public class AnonAPI {
     public JSONObject getAsObject(String id) {
         try {
             /* Create response */
-            HttpResponse<JsonNode> response = Unirest.get("https://anonfile.com/api/v2/file/{id}/info".replace("{id}", id)).asJson();
+            HttpResponse<JsonNode> response = Unirest.get("https://api.anonfiles.com/v2/file/{id}/info".replace("{id}", id)).asJson();
             /* Return the body as a JSONObject */
             return response.getBody().getObject();
         }catch(Exception e) {
