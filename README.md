@@ -1,3 +1,7 @@
+## Notice
+
+Unfortunately, AnonFile shut down. This will no longer work.
+
 # AnonAPI
 This is AnonAPI, a simple library designed to contact AnonFile to send `post` and `get` requests.
 In short, this allows you to simply upload a file, and retrieve the data of it either through a `String` or `JSONObject`
